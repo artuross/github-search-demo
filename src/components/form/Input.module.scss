@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+
+$textColor: #828282;
+$placeholderColor: #9e9e9e;
+
+$backgroundColor: #f0f3f4;
+$backgroundColorFocus: darken($backgroundColor, 5%);
+
+.container {
+	position: relative;
+}
+
+.input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 36px;
+	background: $backgroundColor;
+	padding: 8px;
+
+	border-radius: 8px;
+	border: none;
+
+	font-family: $fontFamily;
+	font-size: 14px;
+	color: $textColor;
+
+	transition: 0.2s background-color;
+
+	&::placeholder {
+		color: $placeholderColor;
+	}
+
+	&:focus {
+		outline: none;
+		background: $backgroundColorFocus;
+	}
+}
+
+.withIcon {
+	padding-left: 32px;
+}
+
+.icon {
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
