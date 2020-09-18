@@ -16,7 +16,7 @@
 		"typescript": "^3.7.5"
 	},
 	"scripts": {
-		"prettier:lint": "prettier -c src/*.{tsx?,css} .prettierrc package.json tsconfig.json",
+		"prettier:lint": "prettier -c src/**/*.{ts,tsx,css} .prettierrc package.json tsconfig.json",
 		"prettier:fix": "prettier -w src/**/*.{ts,tsx,css} .prettierrc package.json tsconfig.json",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
