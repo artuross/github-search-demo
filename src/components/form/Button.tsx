@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import React, { ButtonHTMLAttributes } from 'react';
 import { Link } from 'react-router-dom';
-
 import styles from './Button.module.scss';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {

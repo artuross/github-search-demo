@@ -1,5 +1,4 @@
 import React, { ReactNode, ReactNodeArray } from 'react';
-
 import styles from './FormGroup.module.scss';
 
 interface Props {

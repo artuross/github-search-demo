@@ -1,10 +1,9 @@
+import classNames from 'classnames';
 import React, {
 	ComponentType,
 	InputHTMLAttributes,
 	SVGAttributes,
 } from 'react';
-import classNames from 'classnames';
-
 import styles from './Input.module.scss';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
