@@ -7,3 +7,7 @@ export const generateSearchUri = (search: string): string | undefined => {
 
 	return `/search/${term}`;
 };
+
+export const generateUserUri = (login: string): string => {
+	return `/user/${login}`;
+};

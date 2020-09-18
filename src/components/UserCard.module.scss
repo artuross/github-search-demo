@@ -1,0 +1,25 @@
+.container {
+	margin: 10px 0;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	text-decoration: none;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.name {
+	margin-left: 10px;
+	color: black;
+	text-decoration: none;
+
+	.container:hover > & {
+		text-decoration: underline;
+	}
+}
