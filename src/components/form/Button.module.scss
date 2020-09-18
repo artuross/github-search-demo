@@ -1,0 +1,24 @@
+@import '../../styles/text';
+@import '../../styles/variables';
+@import './__common';
+
+.button {
+	@extend .text;
+	@extend .formElement;
+
+	box-sizing: border-box;
+	display: block;
+	background: $colorPrimary;
+	font-weight: 500;
+	padding: 12px;
+	color: white;
+	font-size: 12px;
+
+	&:hover {
+		background: darken($colorPrimary, 5%);
+	}
+
+	&:active {
+		background: darken($colorPrimary, 10%);
+	}
+}
