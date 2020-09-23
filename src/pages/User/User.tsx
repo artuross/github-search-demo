@@ -1,5 +1,6 @@
 import React, { Fragment, VoidFunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { Loader } from '../../components/Loader';
 import { useFetchUser } from '../../hooks/useFetchUser';
 import { useFetchUserRepositories } from '../../hooks/useFetchUserRepositories';
 import { TopRepositories } from './components/TopRepositories';
@@ -20,7 +21,7 @@ export const User: VoidFunctionComponent<Props> = ({
 	} = useFetchUserRepositories(user);
 
 	if (loading) {
-		return <div>loading...</div>;
+		return <Loader />;
 	}
 
 	if (error || result === undefined) {

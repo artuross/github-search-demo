@@ -1,4 +1,5 @@
 import React, { VoidFunctionComponent } from 'react';
+import { Loader } from '../../../components/Loader';
 import { RepositoryCard } from '../../../components/RepositoryCard';
 import { UserRepository } from '../../../hooks/useFetchUserRepositories';
 import styles from './TopRepositories.module.scss';
@@ -19,7 +20,7 @@ export const TopRepositories: VoidFunctionComponent<Props> = ({
 	}
 
 	if (loading) {
-		return <div>loading...</div>;
+		return <Loader delayMs={500} />;
 	}
 
 	if (repositiories.length === 0) {

@@ -1,6 +1,7 @@
 import React, { Fragment, VoidFunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Alert } from '../../components/Alert';
+import { Loader } from '../../components/Loader';
 import { UserCard } from '../../components/UserCard';
 import { useFetchUsers } from '../../hooks/useFetchUsers';
 import styles from './Search.module.scss';
@@ -19,7 +20,7 @@ export const Search: VoidFunctionComponent<Props> = ({
 	}
 
 	if (loading) {
-		return <div>loading...</div>;
+		return <Loader />;
 	}
 
 	return (
