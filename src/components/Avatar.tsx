@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { VoidFunctionComponent } from 'react';
 import styles from './Avatar.module.scss';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 	variant?: 'small' | 'large';
 }
 
-export const Avatar: React.FunctionComponent<Props> = ({
+export const Avatar: VoidFunctionComponent<Props> = ({
 	src,
 	alt,
 	variant = 'small',

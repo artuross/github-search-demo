@@ -1,13 +1,13 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, VoidFunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { Alert } from '../../components/Alert';
 import { UserCard } from '../../components/UserCard';
 import { useFetchUsers } from '../../hooks/useFetchUsers';
-import { Alert } from '../../components/Alert';
 import styles from './Search.module.scss';
 
 interface Props extends RouteComponentProps<{ search: string }> {}
 
-export const Search: FunctionComponent<Props> = ({
+export const Search: VoidFunctionComponent<Props> = ({
 	match: {
 		params: { search },
 	},

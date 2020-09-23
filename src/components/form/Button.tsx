@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, VoidFunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 
@@ -8,7 +8,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	to?: string;
 }
 
-export const Button: React.FunctionComponent<Props> = ({
+export const Button: VoidFunctionComponent<Props> = ({
 	className,
 	to,
 	text,

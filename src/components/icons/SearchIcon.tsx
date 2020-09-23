@@ -1,4 +1,4 @@
-import React, { SVGAttributes } from 'react';
+import React, { SVGAttributes, VoidFunctionComponent } from 'react';
 
 const ICON_DEFAULT_SIZE = 16;
 
@@ -6,7 +6,7 @@ interface Props extends SVGAttributes<SVGElement> {
 	className?: string;
 }
 
-export const SearchIcon: React.FunctionComponent<Props> = ({
+export const SearchIcon: VoidFunctionComponent<Props> = ({
 	width = ICON_DEFAULT_SIZE,
 	height = ICON_DEFAULT_SIZE,
 	fill = '#4F4F4F',

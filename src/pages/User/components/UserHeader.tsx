@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { VoidFunctionComponent } from 'react';
 import { Avatar } from '../../../components/Avatar';
 import styles from './UserHeader.module.scss';
 
@@ -8,7 +8,7 @@ interface Props {
 	description: string | null;
 }
 
-export const UserHeader: React.FunctionComponent<Props> = ({
+export const UserHeader: VoidFunctionComponent<Props> = ({
 	avatarUrl,
 	name,
 	description,

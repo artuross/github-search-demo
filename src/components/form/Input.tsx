@@ -3,6 +3,7 @@ import React, {
 	ComponentType,
 	InputHTMLAttributes,
 	SVGAttributes,
+	VoidFunctionComponent,
 } from 'react';
 import styles from './Input.module.scss';
 
@@ -12,7 +13,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	iconHeight?: number;
 }
 
-export const Input: React.FunctionComponent<Props> = ({
+export const Input: VoidFunctionComponent<Props> = ({
 	Icon = null,
 	iconWidth,
 	iconHeight,

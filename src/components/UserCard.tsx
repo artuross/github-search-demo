@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { VoidFunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { generateUserUri } from '../util/url';
 import { Avatar } from './Avatar';
@@ -9,7 +9,7 @@ interface Props {
 	avatarUrl: string;
 }
 
-export const UserCard: React.FunctionComponent<Props> = ({
+export const UserCard: VoidFunctionComponent<Props> = ({
 	login,
 	avatarUrl,
 }) => {

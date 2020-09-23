@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { VoidFunctionComponent } from 'react';
 import { RepositoryCard } from '../../../components/RepositoryCard';
 import { UserRepository } from '../../../hooks/useFetchUserRepositories';
 import styles from './TopRepositories.module.scss';
@@ -9,7 +9,7 @@ interface Props {
 	repositiories: UserRepository[];
 }
 
-export const TopRepositories: FunctionComponent<Props> = ({
+export const TopRepositories: VoidFunctionComponent<Props> = ({
 	loading,
 	error,
 	repositiories,

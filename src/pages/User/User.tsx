@@ -1,13 +1,13 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, VoidFunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { UserHeader } from './components/UserHeader';
 import { useFetchUser } from '../../hooks/useFetchUser';
 import { useFetchUserRepositories } from '../../hooks/useFetchUserRepositories';
 import { TopRepositories } from './components/TopRepositories';
+import { UserHeader } from './components/UserHeader';
 
 interface Props extends RouteComponentProps<{ user: string }> {}
 
-export const User: FunctionComponent<Props> = ({
+export const User: VoidFunctionComponent<Props> = ({
 	match: {
 		params: { user },
 	},

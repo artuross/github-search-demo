@@ -1,14 +1,14 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, VoidFunctionComponent } from 'react';
 import { generateSearchUri } from '../../util/url';
 import { Button } from '../form/Button';
 import { FormGroup } from '../form/FormGroup';
 import { SearchInput } from '../form/SearchInput';
-import styles from './Header.module.scss';
 import { Container } from './Container';
+import styles from './Header.module.scss';
 
 interface Props {}
 
-export const Header: React.FunctionComponent<Props> = () => {
+export const Header: VoidFunctionComponent<Props> = () => {
 	const [search, setSearch] = useState('');
 
 	const onChange = useCallback(evt => setSearch(evt.currentTarget.value), []);
