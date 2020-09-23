@@ -22,6 +22,9 @@
 		"prettier:fix": "npm run prettier:lint -w",
 		"eslint:lint": "eslint -c .eslintrc --ext .ts,.tsx src",
 		"eslint:fix": "npm run eslint:lint --fix",
+		"surge": "surge ./build demo-gh-search.surge.sh",
+		"predeploy": "npm run build",
+		"deploy": "npm run surge",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
@@ -51,6 +54,7 @@
 		"eslint-plugin-react": "^7.21.1",
 		"eslint-plugin-react-hooks": "^4.1.2",
 		"prettier": "^2.1.2",
+		"surge": "^0.21.6",
 		"typescript": "^3.9.7"
 	}
 }
