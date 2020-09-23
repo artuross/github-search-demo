@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ApiError } from '../util/apiError';
 import { get } from '../util/get';
 
 interface UserRepositoriesResponse {
@@ -18,7 +19,7 @@ export interface UserRepository {
 interface UseFetchUserRepositories {
 	results: UserRepository[];
 	loading: boolean;
-	error: string | null;
+	error: ApiError | Error | null;
 }
 
 const fetchUserRepositories = async (
@@ -44,7 +45,7 @@ export const useFetchUserRepositories = (
 ): UseFetchUserRepositories => {
 	const [results, setResult] = useState<UserRepository[]>([]);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
+	const [error, setError] = useState<ApiError | Error | null>(null);
 
 	useEffect(() => {
 		setLoading(true);
@@ -55,7 +56,7 @@ export const useFetchUserRepositories = (
 				setResult(result.slice(0, 3));
 			})
 			.catch(error => {
-				setError(error.message);
+				setError(error);
 			})
 			.finally(() => {
 				setLoading(false);

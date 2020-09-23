@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
+import { ApiError } from '../util/apiError';
 import { get } from '../util/get';
 
 interface SearchUserResponse {
-	total_count?: number;
-	items?: {
-		id?: number;
-		login?: string;
-		avatar_url?: string;
+	total_count: number;
+	items: {
+		id: number;
+		login: string;
+		avatar_url: string;
 	}[];
 }
 
@@ -21,7 +22,7 @@ interface UseFetchUsers {
 	total: number;
 	hasMore: boolean;
 	loading: boolean;
-	error: string | null;
+	error: ApiError | Error | null;
 }
 
 const fetchUsers = async (
@@ -34,15 +35,14 @@ const fetchUsers = async (
 
 	// we can just force TS to use the values, as we handle errors in hook below
 	// ideally we would actually check the fields we need
-	const total = body.total_count!;
-	const results =
-		body.items!.map(
-			(item): UserSearchResult => ({
-				id: item.id!,
-				login: item.login!,
-				avatarUrl: item.avatar_url!,
-			})
-		) ?? [];
+	const total = body.total_count;
+	const results = body.items.map(
+		(item): UserSearchResult => ({
+			id: item.id,
+			login: item.login,
+			avatarUrl: item.avatar_url,
+		})
+	);
 	const hasMore = total > results.length;
 
 	return [results, total, hasMore];
@@ -53,7 +53,7 @@ export const useFetchUsers = (search: string): UseFetchUsers => {
 	const [total, setTotal] = useState(0);
 	const [hasMore, setHasMore] = useState(false);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
+	const [error, setError] = useState<ApiError | Error | null>(null);
 
 	useEffect(() => {
 		setLoading(true);
@@ -65,7 +65,7 @@ export const useFetchUsers = (search: string): UseFetchUsers => {
 				setHasMore(hasMore);
 			})
 			.catch(error => {
-				setError(error.message);
+				setError(error);
 			})
 			.finally(() => {
 				setLoading(false);

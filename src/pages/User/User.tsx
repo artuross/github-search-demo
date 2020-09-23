@@ -1,5 +1,6 @@
 import React, { Fragment, VoidFunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import { ErrorMessage } from '../../components/ErrorMessage';
 import { Loader } from '../../components/Loader';
 import { useFetchUser } from '../../hooks/useFetchUser';
 import { useFetchUserRepositories } from '../../hooks/useFetchUserRepositories';
@@ -24,16 +25,19 @@ export const User: VoidFunctionComponent<Props> = ({
 		return <Loader />;
 	}
 
-	if (error || result === undefined) {
-		return <div>{error}</div>;
+	if (error) {
+		return <ErrorMessage error={error} />;
 	}
+
+	// we know the values are set
+	const userResult = result!;
 
 	return (
 		<Fragment>
 			<UserHeader
-				name={result.name || result.login}
-				avatarUrl={result.avatarUrl}
-				description={result.description}
+				name={userResult.name || userResult.login}
+				avatarUrl={userResult.avatarUrl}
+				description={userResult.description}
 			/>
 
 			<TopRepositories

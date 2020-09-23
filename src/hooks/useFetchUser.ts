@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { ApiError } from '../util/apiError';
 import { get } from '../util/get';
 
 interface UserResponse {
@@ -20,7 +21,7 @@ interface UserResult {
 interface UseFetchUser {
 	result?: UserResult;
 	loading: boolean;
-	error: string | null;
+	error: ApiError | Error | null;
 }
 
 const fetchUser = async (login: string): Promise<UserResult> => {
@@ -44,7 +45,7 @@ const fetchUser = async (login: string): Promise<UserResult> => {
 export const useFetchUser = (login: string): UseFetchUser => {
 	const [result, setResult] = useState<UserResult | undefined>(undefined);
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
+	const [error, setError] = useState<ApiError | Error | null>(null);
 
 	useEffect(() => {
 		setLoading(true);
@@ -54,7 +55,7 @@ export const useFetchUser = (login: string): UseFetchUser => {
 				setResult(result);
 			})
 			.catch(error => {
-				setError(error.message);
+				setError(error);
 			})
 			.finally(() => {
 				setLoading(false);

@@ -1,6 +1,7 @@
 import React, { Fragment, VoidFunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Alert } from '../../components/Alert';
+import { ErrorMessage } from '../../components/ErrorMessage';
 import { Loader } from '../../components/Loader';
 import { UserCard } from '../../components/UserCard';
 import { useFetchUsers } from '../../hooks/useFetchUsers';
@@ -16,7 +17,7 @@ export const Search: VoidFunctionComponent<Props> = ({
 	const { results, total, hasMore, loading, error } = useFetchUsers(search);
 
 	if (error) {
-		return <div>{error}</div>;
+		return <ErrorMessage error={error} />;
 	}
 
 	if (loading) {

@@ -1,12 +1,14 @@
 import React, { VoidFunctionComponent } from 'react';
+import { ErrorMessage } from '../../../components/ErrorMessage';
 import { Loader } from '../../../components/Loader';
 import { RepositoryCard } from '../../../components/RepositoryCard';
 import { UserRepository } from '../../../hooks/useFetchUserRepositories';
+import { ApiError } from '../../../util/apiError';
 import styles from './TopRepositories.module.scss';
 
 interface Props {
 	loading: boolean;
-	error: string | null;
+	error: ApiError | Error | null;
 	repositiories: UserRepository[];
 }
 
@@ -16,7 +18,7 @@ export const TopRepositories: VoidFunctionComponent<Props> = ({
 	repositiories,
 }) => {
 	if (error) {
-		return <div>{error}</div>;
+		return <ErrorMessage error={error} />;
 	}
 
 	if (loading) {
