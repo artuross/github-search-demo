@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { Header } from './components/Header';
+import { Header } from './components/layout/Header';
 import { Container } from './components/layout/Container';
-import { Home } from './pages/Home';
-import { Search } from './pages/Search';
-import { User } from './pages/User';
+import { Home } from './pages/Home/Home';
+import { Search } from './pages/Search/Search';
+import { User } from './pages/User/User';
 
 export const App = () => {
 	return (

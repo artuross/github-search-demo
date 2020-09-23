@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
-import { generateSearchUri } from '../util/url';
-import { Button } from './form/Button';
-import { FormGroup } from './form/FormGroup';
-import { SearchInput } from './form/SearchInput';
+import { generateSearchUri } from '../../util/url';
+import { Button } from '../form/Button';
+import { FormGroup } from '../form/FormGroup';
+import { SearchInput } from '../form/SearchInput';
 import styles from './Header.module.scss';
-import { Container } from './layout/Container';
+import { Container } from './Container';
 
 interface Props {}
 

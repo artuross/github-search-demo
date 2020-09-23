@@ -1,9 +1,9 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { UserHeader } from '../components/UserHeader';
-import { useFetchUser } from '../hooks/useFetchUser';
-import { useFetchUserRepositories } from '../hooks/useFetchUserRepositories';
-import { TopRepositories } from './User/TopRepositories';
+import { UserHeader } from './components/UserHeader';
+import { useFetchUser } from '../../hooks/useFetchUser';
+import { useFetchUserRepositories } from '../../hooks/useFetchUserRepositories';
+import { TopRepositories } from './components/TopRepositories';
 
 interface Props extends RouteComponentProps<{ user: string }> {}
 

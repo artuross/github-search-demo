@@ -1,8 +1,8 @@
 import React, { Fragment, FunctionComponent } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import { UserCard } from '../components/UserCard';
-import { useFetchUsers } from '../hooks/useFetchUsers';
-import { Alert } from '../components/Alert';
+import { UserCard } from '../../components/UserCard';
+import { useFetchUsers } from '../../hooks/useFetchUsers';
+import { Alert } from '../../components/Alert';
 import styles from './Search.module.scss';
 
 interface Props extends RouteComponentProps<{ search: string }> {}

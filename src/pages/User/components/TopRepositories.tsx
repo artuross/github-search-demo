@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { RepositoryCard } from '../../components/RepositoryCard';
-import { UserRepository } from '../../hooks/useFetchUserRepositories';
+import { RepositoryCard } from '../../../components/RepositoryCard';
+import { UserRepository } from '../../../hooks/useFetchUserRepositories';
 import styles from './TopRepositories.module.scss';
 
 interface Props {

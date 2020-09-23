@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from './Avatar';
+import { Avatar } from '../../../components/Avatar';
 import styles from './UserHeader.module.scss';
 
 interface Props {
