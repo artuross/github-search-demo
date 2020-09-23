@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Container } from './components/layout/Container';
 import { Home } from './pages/Home';
 import { Search } from './pages/Search';
+import { User } from './pages/User';
 
 export const App = () => {
 	return (
@@ -14,7 +15,7 @@ export const App = () => {
 				<Switch>
 					<Route exact path={'/'} component={Home} />
 					<Route path={'/search/:search'} component={Search} />
-					{/*<Route path={'/user/:user'} component={User} />*/}
+					<Route path={'/user/:user'} component={User} />
 					<Redirect to={'/'} />
 				</Switch>
 			</Container>

@@ -1,0 +1,27 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.mainContainer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.name {
+	margin-left: 16px;
+	font-weight: 500;
+	font-size: 18px;
+	letter-spacing: 0.15px;
+	line-height: 24px;
+	max-width: 110px;
+}
+
+.description {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 0.4px;
+	color: #828282;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { get } from '../util/get';
 
 interface SearchUserResponse {
 	total_count?: number;
@@ -27,11 +28,9 @@ const fetchUsers = async (
 	search: string
 ): Promise<[UserSearchResult[], number, boolean]> => {
 	const encodedTerm = encodeURIComponent(search);
-	const response = await fetch(
+	const body: SearchUserResponse = await get(
 		`https://api.github.com/search/users?q=${encodedTerm}`
 	);
-
-	const body: SearchUserResponse = await response.json();
 
 	// we can just force TS to use the values, as we handle errors in hook below
 	// ideally we would actually check the fields we need
