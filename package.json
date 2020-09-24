@@ -44,9 +44,13 @@
 	},
 	"devDependencies": {
 		"@types/classnames": "^2.2.10",
+		"@types/enzyme": "^3.10.7",
+		"@types/enzyme-adapter-react-16": "^1.0.6",
 		"@types/react-router-dom": "^5.1.5",
 		"@typescript-eslint/eslint-plugin": "^4.2.0",
 		"@typescript-eslint/parser": "^4.2.0",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.5",
 		"eslint": "^6.8.0",
 		"eslint-config-prettier": "^6.11.0",
 		"eslint-plugin-import": "^2.22.0",
